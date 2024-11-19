@@ -68,5 +68,5 @@ For this workshop you need the following:
 ## Cheat Sheet
 Find common terminology for reference [here](./CheatSheet.md)
 
-Modifying to see if this also runs a flow.
+Modifying to see if this also runs a flow. And creating a pull request
 
