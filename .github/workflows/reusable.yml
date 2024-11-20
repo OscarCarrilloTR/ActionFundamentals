@@ -11,14 +11,14 @@ on:
     outputs:
       current-time:
         description: 'The time when greeting.'
-        value: ${{ job.reusable-job.outputs.current-time }}
+        value: ${{ jobs.reusable-job.outputs.current-time }}
     
 
 jobs:
   reusable-job:
     runs-on: ubuntu-latest
     outputs:
-      current-time: ${{ step.time.outputs.time }}
+      current-time: ${{ steps.time.outputs.time }}
     steps:
       - name: Greet someone
         run: echo "Hello ${{ inputs.who-to-greet }}"
