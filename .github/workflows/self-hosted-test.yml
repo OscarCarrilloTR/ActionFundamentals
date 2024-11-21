@@ -17,5 +17,6 @@ jobs:
       
     - name: Print Hello Message
       run: |
-        echo "Hola desde el self-hosted runner en Windows 11!"
-        echo "La fecha actual es: %DATE% %TIME%"
+        echo Hola desde el self-hosted runner en Windows 11!
+        echo La fecha actual es: %DATE% %TIME%
+      shell: cmd
