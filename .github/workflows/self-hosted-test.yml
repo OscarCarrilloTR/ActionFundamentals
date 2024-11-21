@@ -18,5 +18,4 @@ jobs:
     - name: Print Hello Message
       run: |
         echo "Hola desde el self-hosted runner en Windows 11!"
-        echo "La fecha actual es: $((Get-Date).ToString())"
-      shell: powershell
+        echo "La fecha actual es: %DATE% %TIME%"
