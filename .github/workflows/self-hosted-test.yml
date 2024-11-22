@@ -1,0 +1,22 @@
+name: Self-Hosted Windows Runner Test
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  test-run:
+    runs-on: self-hosted
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+      
+    - name: Print Hello Message
+      run: |
+        echo Hola desde el self-hosted runner en Windows 11!
+        echo La fecha actual es: %DATE% %TIME%
+      shell: cmd
