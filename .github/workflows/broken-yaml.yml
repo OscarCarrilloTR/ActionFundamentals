@@ -1,6 +1,5 @@
 name: CI Pipeline
 
-
 on:
   push:
     branches:
@@ -76,4 +75,3 @@ jobs:
       run: echo "Deployment complete"
       env:
         SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-
