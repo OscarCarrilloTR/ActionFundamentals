@@ -23,10 +23,6 @@ jobs:
             os: windows-latest
           - node-version: 14
             os: macos-latest
-          - node-version: 16
-            os: ubuntu-latest
-          - node-version: 18
-            os: windows-latest
         exclude:
           - node-version: 16
             os: windows-latest
@@ -79,7 +75,7 @@ jobs:
           CI: true
 
   deploy:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     needs: build
 
     steps:
@@ -89,7 +85,7 @@ jobs:
         env:
           NODE_ENV: production
           DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
-      - name:
+      - name: error step
         run: echo "This step is missing a name"
 
   notify:
@@ -99,9 +95,5 @@ jobs:
     steps:
       - name: Notify team
         run: echo "Deployment complete"
-        env:
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-      - name: Notify team again
-        run: echo "Deployment complete again"
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
